@@ -1,0 +1,104 @@
+div #kitchen{
+  position: relative;
+  background-image: url('./assets/house.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: url(./assets/kitchen-assets/cursor.png) 24 24, pointer;
+}
+
+
+
+body{
+  background: rgb(110,132,145);
+}
+
+#cans {
+  position: absolute;
+  background-size: contain;
+  top: 270px;
+  left: 520px;
+  width: 158px;
+  height: 128px;
+  background-image: url('./assets/kitchen-assets/cans.png');
+  
+}
+#cans-arrow{
+  position: absolute;
+  top: 270px;
+  left: 520px;
+}
+
+#pot{
+    position: absolute;
+    top: 550px;
+    left: 450px;
+    width: 135px;
+    height: 145px;
+    background-image: url('./assets/kitchen-assets/pot.png');
+    
+}
+
+#living-room {
+  position: relative;
+  top: 483px;
+  left: 703px;
+  width: 120px;
+  height: 63px;
+  background-image: url('./assets/bottom-middle.png');
+  z-index: 1;
+}
+
+#bedroom {
+  position: relative;
+  top: 241px;
+  left: 618px;
+  width: 68px;
+  height: 53px;
+  background-image: url('./assets/top-middle.png');
+  z-index: 1;
+}
+
+#box{
+  position: absolute;
+  background-size: contain;
+  top: 570px;
+  left: 30px;
+  width: 240px;
+  height: 228px;
+  background-image: url('./assets/kitchen-assets/box.png');
+  
+}
+
+.st0{
+  fill:#000000;
+}
+
+.path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: draw 2s infinite;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#forks{
+  position: absolute;
+  background-size: contain;
+  top: 570px;
+  left: 880px;
+  width: 115px;
+  height: 128px;
+  border: 1px solid black;
+  background-image: url('./assets/kitchen-assets/forks.png');
+  
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0; 
+}

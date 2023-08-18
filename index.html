@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <div
+      id="kitchen"
+      style="
+        width: 100%;
+        height: 100%;
+        background-image: url(./assets/kitchen-assets/kitchen.png);
+        position: relative;
+        cursor: url(./assets/kitchen-assets/cursor.png) 24 24, pointer;
+      ">
+      <div id="cans" data-toggle="tooltip" data-placement="top" title="Click me to put in box!"></div>
+      <div id="pot" data-toggle="tooltip" data-placement="top" title="Click me to put in box!"></div>
+      <div id="forks" data-toggle="tooltip" data-placement="top" title="Click me to put in box!"></div>
+    </div>
+    
+    <div id="box"></div>
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+  </body>
+</html>
