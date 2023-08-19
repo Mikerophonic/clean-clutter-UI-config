@@ -1,6 +1,5 @@
 import "./styles.css";
 import EventEmitter from 'events'; 
-
 export default class Tooltip extends EventEmitter{
 
   constructor(elementId) {
@@ -9,6 +8,7 @@ export default class Tooltip extends EventEmitter{
     this.hasTooltip = false;
     this.config ={
       backgroundColor: 'white',
+      borderRadius: '25px',
       border: '1px solid #ccc',
       padding: '5px',
       fontSize: '10px',

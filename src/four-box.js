@@ -16,16 +16,26 @@ export default class BoxMethod extends EventEmitter {
     this.calculateRect();
     this.config ={
       backgroundColor: 'white',
+      borderRadius: '25px',
       border: '1px solid #ccc',
       padding: '5px',
-      fontSize: '10px',
+      color: 'clay',
+      width: '50%',
+      fontSize: '20px',
+      textAlign: 'center',
+      position: 'absolute',
+      bottom: '0px',
       rect :this.rect,
       left: this.left + "px",
       right: this.right + "px"
     };
     this.boxText = null;
+    this.formatBoxText();
   }
 
+  initialize(){
+
+  }
   getState(){
     return this.state[this.counter];
   }
@@ -52,6 +62,7 @@ export default class BoxMethod extends EventEmitter {
       this.boxText = document.createElement("div");
       this.boxText.classList.add('box-text');
       Object.assign(this.boxText.style, this.config);
+      console.log('initialized');
       this.boxElement.appendChild(this.boxText);
     }
   
