@@ -1,16 +1,19 @@
 
 import "./styles.css";
 import ToolTip from "./tooltip";
-
+import BoxMethod from './four-box.js'
 
 window.addEventListener("load", function () {
   mouseOverFormat("cans");
   mouseOverFormat("pot");
   mouseOverFormat("forks");
+  setOnStart();
 });
 
-
-
+function setOnStart(){
+  const fourbox = new BoxMethod('box');
+  return fourbox;
+}
 
 function mouseOverFormat(elementId) {
   const elemToolTip = new ToolTip(elementId);

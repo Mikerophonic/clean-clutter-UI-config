@@ -21,6 +21,15 @@ div > div .tooltip {
   font-family: "press start 2p", cursive;
 }
 
+div > div .box-text {
+  position: "absolute";
+  background: "white";
+  border: "1px solid #ccc";
+  padding: "5px";
+  font-size: '8px';
+  font-family: "press start 2p", cursive;
+}
+
 body{
   background: rgb(110,132,145);
 }
