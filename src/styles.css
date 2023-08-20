@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0; 
+}
+body #bedroom{
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/bed_assets/room_empty.png');
+  position: relative;
+}
+
+
+div > div .tooltip {
+  position: "absolute";
+  background: "white";
+  border: "1px solid #ccc";
+  padding: "5px";
+  font-size: '8px';
+  font-family: "press start 2p", cursive;
+}
+
+body .box-text {
+  position: "absolute";
+  border: "1px solid #ccc";
+  padding: "5px";
+  font-size: '8px';
+  font-family: "press start 2p", cursive;
+}
+
+body{
+  background: rgb(110,132,145);
+}
+
+#bed_trash {
+  position: absolute;
+  background-size: contain;
+  top: 335px;
+  left: 721px;
+  height: 362px;
+  width: 281px;
+  background-image: url('../assets/bed_assets/bed_trash.png');
+  
+}
+
+#bed_put {
+  position: absolute;
+  background-size: contain;
+  top: 400px;
+  left: 455px;
+  width: 307px;
+  height: 190px;
+  z-index: 1;
+  background-image: url('../assets/bed_assets/bed_put.png');
+  
+}
+
+#bed_store {
+  position: absolute;
+  background-size: contain;
+  top: 355px;
+  left: 540px;
+  width: 388px;
+  height: 332px;
+  background-image: url('../assets/bed_assets/bed_store.png');
+  
+}
+
+#bed_donate {
+  position: absolute;
+  background-size: contain;
+  top: 325px;
+  left: 515px;
+  width: 620px;
+  height: 305px;
+  background-image: url('../assets/bed_assets/bed_donate.png');
+  
+}
+
+/* #winter {
+  position: absolute;
+  background-size: contain;
+  top: 700px;
+  left: 620px;
+  width: 121px;
+  height: 91px;
+  background-image: url('../assets/kitchen-assets/clothes.png');
+
+}
+
+#pot{
+  position: absolute;
+  top: 550px;
+  left: 450px;
+  width: 135px;
+  height: 145px;
+  background-image: url('../assets/kitchen-assets/pot.png');
+}
+
+#box{
+  position: absolute;
+  background-size: contain;
+  top: 570px;
+  left: 30px;
+  width: 240px;
+  height: 228px;
+  background-image: url('../assets/kitchen-assets/box.png');
+  
+}
+
+
+#forks{
+  position: absolute;
+  background-size: contain;
+  top: 570px;
+  left: 880px;
+  width: 115px;
+  height: 128px;
+  background-image: url('../assets/kitchen-assets/forks.png');
+  
+}
+
+ */
