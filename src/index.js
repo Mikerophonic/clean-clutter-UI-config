@@ -5,17 +5,22 @@ import BoxMethod from './four-box.js'
 import ApplyAnimation from "./animate-item.js";
 
 window.addEventListener("load", function () {
-  mouseOverFormat("cans");
-  mouseOverFormat("pot");
-  mouseOverFormat("forks");
-  mouseOverFormat('winter');
-  setOnStart();
+  //start trash
+
+  const box = new BoxMethod("box");
+  box.populateItems("kitchen");
+//need: populateItems bedroom
+
+  const kitchenArr = ["cans", "pot", "forks", "winter"];
+  formatAll(kitchenArr);
 });
 
-function setOnStart(){
-  const fourbox = new BoxMethod('box');
-  return fourbox;
+function formatAll(elemArr){
+  elemArr.forEach((elem)=>{
+    mouseOverFormat(elem);
+  })
 }
+
 
 function mouseOverFormat(elementId) {
   const animate = new ApplyAnimation(elementId);
