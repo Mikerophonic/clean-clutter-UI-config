@@ -2,6 +2,7 @@
 import "./styles.css";
 import ToolTip from "./tooltip";
 import BoxMethod from './four-box.js'
+import ApplyAnimation from "./animate-item.js";
 
 window.addEventListener("load", function () {
   mouseOverFormat("cans");
@@ -17,6 +18,8 @@ function setOnStart(){
 }
 
 function mouseOverFormat(elementId) {
+  const animate = new ApplyAnimation(elementId);
+  animate.toBox();
   const elemToolTip = new ToolTip(elementId);
     document
       .getElementById(elementId)

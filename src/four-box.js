@@ -33,7 +33,8 @@ export default class BoxMethod extends EventEmitter {
     this.formatBoxText();
   }
 
-  initialize(){
+  trashState(){
+    
 
   }
   getState(){
