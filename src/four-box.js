@@ -1,5 +1,8 @@
 import EventEmitter from "events";
+import ApplyAnimation from "./animate-item";
+import Tooltip from "./tooltip.js";
 const confetti = require("canvas-confetti");
+
 export default class BoxMethod extends EventEmitter {
   constructor(boxElementId) {
     super();
@@ -15,11 +18,14 @@ export default class BoxMethod extends EventEmitter {
     };
 
     this.elems = {
-      cans: document.getElementsByClassName("trash"),
-      pot: document.getElementsByClassName("donate"),
-      forks: document.getElementById("put-away"),
-      winter: document.getElementById("store"),
+      "trash": document.getElementsByClassName("trash"),
+      "donate": document.getElementsByClassName("donate"),
+      "put-away": document.getElementById("put-away"),
+      "store": document.getElementById("store"),
     };
+
+    console.log('elems', this.elems);
+    console.log('trash', this.elems["trash"]);
 
     this.calculateRect();
     this.boxText = null;
@@ -52,13 +58,14 @@ export default class BoxMethod extends EventEmitter {
   }
 
   nextState() {
-    if (this.counter === 3) {
-      this.counter++;
+    if (this.counter===3) {
       this.done = true;
       this.finish();
       this.emit("box:done", { target: this });
     }
     this.counter++;
+    console.log('counter', this.counter);
+    console.log('state', this.state[this.counter]);
   }
 
   calculateRect() {
@@ -68,7 +75,7 @@ export default class BoxMethod extends EventEmitter {
     this.right = rect.right;
   }
 
-  populateItems(room) {
+  populateItem(room) {
     for (let i = 0; i < 4; i++) {
       const stateValue = this.state[i];
       const className = `${stateValue}-${room}`;
@@ -77,12 +84,35 @@ export default class BoxMethod extends EventEmitter {
   
       // Append each selected element to the parent div
       for (const element of elements) {
-        element.addEventListener("click", () => {
-          this.putAway();
+        const elemToolTip = new Tooltip(element.id);
+        element.addEventListener('mouseover', () => {
+          if (element.className.includes(this.getState())) {
+            elemToolTip.add();
+          }
         });
+      document
+      .getElementById(element.id)
+      .addEventListener("mouseleave", function () {
+        elemToolTip.remove();
+      });
+      element.addEventListener("click", () => {
+        // Check if the class name of the clicked element matches the current state
+        if (element.className.includes(this.getState())) {
+          this.animateItem(element.id);
+          this.putAway();
+          console.log(element.id);
+        }
+      });
       }
     }
-  } 
+  }
+
+  animateItem(elementId) {
+    const animate = new ApplyAnimation(elementId);
+    console.log('animated ', elementId);
+    animate.toBox();
+  }
+  
   
   formatBoxText() {
     // Check if this.boxText exists, and create it if not
@@ -101,15 +131,19 @@ export default class BoxMethod extends EventEmitter {
 
   finish() {
     const myCanvas = document.createElement("canvas");
-    document.body.appendChild(myCanvas);
-
+    console.log('finished');
+    document.querySelector('#kitchen').prepend(myCanvas);
+    myCanvas.style.position = 'absolute';
+    myCanvas.style.width = "100%";
+    myCanvas.style.top='30px';
+    myCanvas.style.left="300px";
     const myConfetti = confetti.create(myCanvas, {
       resize: true,
       useWorker: true,
     });
     myConfetti({
-      particleCount: 100,
-      spread: 160
+      particleCount: 400,
+      spread: 260
     });
   }
 }

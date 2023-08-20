@@ -1,5 +1,6 @@
 import "./styles.css";
 import EventEmitter from 'events'; 
+ 
 export default class Tooltip extends EventEmitter{
 
   constructor(elementId) {
@@ -19,10 +20,11 @@ export default class Tooltip extends EventEmitter{
   }
 
   add() { 
+    console.log(this);
     if(this.hasTooltip) return;
     const tooltip = document.createElement("div");
     tooltip.textContent = "Throw me in the box!";
-    tooltip.classList.add("tooltip");
+    tooltip.classList.add("tooltip"); 
     Object.assign(tooltip.style, this.config);
     this.element.appendChild(tooltip);
     this.hasTooltip = true;
