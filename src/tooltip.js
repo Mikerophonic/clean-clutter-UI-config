@@ -12,8 +12,8 @@ export default class Tooltip extends EventEmitter{
       border: '1px solid #ccc',
       padding: '5px',
       fontSize: '10px',
-      rect :this.element.getBoundingClientRect(),
-      left: this.element.getBoundingClientRect().left + "px",
+      rect:  this.element.getBoundingClientRect(),
+      left:  this.element.getBoundingClientRect().left + "px",
       right: this.element.getBoundingClientRect().right + "px"
     };
   }

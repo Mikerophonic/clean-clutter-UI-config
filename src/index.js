@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
   mouseOverFormat("cans");
   mouseOverFormat("pot");
   mouseOverFormat("forks");
+  mouseOverFormat('winter');
   setOnStart();
 });
 

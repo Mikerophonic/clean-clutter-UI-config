@@ -44,6 +44,17 @@ body{
   
 }
 
+#winter {
+  position: absolute;
+  background-size: contain;
+  top: 700px;
+  left: 620px;
+  width: 121px;
+  height: 91px;
+  background-image: url('../assets/kitchen-assets/clothes.png');
+
+}
+
 #pot{
   position: absolute;
   top: 550px;
